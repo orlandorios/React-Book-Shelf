@@ -14,9 +14,12 @@ export const BookLibrary = ({ book }) => {
         <div className='bookData'>
             <div>
                 <h1 className='title'> {book.title}</h1>
-                <h2 className='author'> {book.author}</h2>
-                <h3 className='shortDescription'> {book.shortDescription}</h3>
-                <p className='coverImage'> <img src={book.coverImageUrl} alt=""> </img> </p>
+                <h3 className='author'> {book.author}</h3>
+                <p className='shortDescription'> {book.shortDescription}</p>
+                <div className="img-container">
+                        <img className="cover_art" 
+                        src={book.coverImageUrl} alt="Book cover" onError={(e) => e.target.src = "default_book_cover.jpeg"} />
+                </div>
                 <button onClick={() => handleClick()}>{expanded? 'Less' : 'More'} Information </button>
 
                 {expanded ? <p>URL: {book.url}</p> : ''}
@@ -26,7 +29,6 @@ export const BookLibrary = ({ book }) => {
             </div>
         </div>
         </div>
-
+    
     )
-
 }
