@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import './App.css';
+import placeholder from "./logo.svg"
 
 export const BookLibrary = ({ book }) => {
     const [expanded, setExpanded] = useState(false)
@@ -18,7 +19,7 @@ export const BookLibrary = ({ book }) => {
                 <p className='shortDescription'> {book.shortDescription}</p>
                 <div className="img-container">
                         <img className="cover_art" 
-                        src={book.coverImageUrl} alt="Book cover" onError={(e) => e.target.src = "default_book_cover.jpeg"} />
+                        src={book.coverImageUrl} alt="Book cover" onError={(e) => e.target.src = placeholder} />
                 </div>
                 <button onClick={() => handleClick()}>{expanded? 'Less' : 'More'} Information </button>
 
